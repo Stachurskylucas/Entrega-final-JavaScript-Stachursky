@@ -936,7 +936,7 @@ html {
     background-color: transparent !important;
   }
   .header-desktop__ingresar {
-    z-index: 10000000;
+    z-index: 1500;
   }
   #header-desktop__container {
     background-color: transparent !important;

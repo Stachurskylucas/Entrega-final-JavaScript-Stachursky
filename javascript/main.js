@@ -13,19 +13,33 @@
     const cerrarCarritoBtn = document.getElementById('cerrar-menu');
     const carritoVentana = document.getElementById('carrito-ventana');
     const body = document.querySelector("body");
+    const headerResponsive = document.querySelector(".navbar-toggler")
+    const cerrarHeaderResponsive = document.querySelector("#close-header")
 
     // Función para abrir el carrito desktop
     abrirCarritoBtn.addEventListener("click", () => {
         carritoVentana.classList.add("active");
         body.classList.add("block-scroll");
         carritoVentana.style.transform = "translateX(0)";
-    })
+    });
+
+    // Función para ocultar el icono de carrito cuando se abre el header responsive
+    headerResponsive.addEventListener("click", () => {
+        abrirCarritoBtn.classList.add("disabled");
+    });
+
+    // Funcion para desocultar el icono de carrito cuando se cierra el header responsive
+    cerrarHeaderResponsive.addEventListener("click", () => {
+        setTimeout(() => {
+            abrirCarritoBtn.classList.remove("disabled");
+        }, 180);
+    });
 
     // Función para cerrar el carrito
     cerrarCarritoBtn.addEventListener("click", () => {
         carritoVentana.classList.remove("active");
         body.classList.remove("block-scroll");
-    })
+    });
 
 //==============================================================================//
 
@@ -517,3 +531,5 @@
     });
     
     // Fin scroll header
+
+    
