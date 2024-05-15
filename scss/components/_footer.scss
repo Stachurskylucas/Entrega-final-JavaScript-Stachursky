@@ -1,0 +1,465 @@
+//Footer desktop
+
+.main-footer {
+    background-color: rgb(0, 0, 0);
+    padding-bottom: 50px;
+    overflow-x: hidden;
+
+    .main-footer__div {
+
+        #Contacto {
+        
+            section {
+
+                h2 {
+                    color: #ffffff;
+                    text-align: center;
+                    font-size: 6.2em;
+                    padding-top: 120px;
+                    margin-bottom: 10px;
+                }
+
+                #formulario {
+                    display: flex;
+                    justify-content: center;
+
+                    form {
+                    
+                        .group {
+                            position: relative;
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                            margin: 50px auto 0 auto;
+
+                            .input {
+                                font-size: 16px;
+                                padding: 10px 10px 10px 5px;
+                                display: block;
+                                width: 300px;
+                                margin: 0 auto;
+                                border: none;
+                                border-bottom: 1px solid #515151;
+                                background: transparent;
+                                color: #ffffff;
+    
+                                &::focus {
+                                    outline: none;
+                                }
+                            }
+
+                            .highlight {
+                                position: absolute;
+                                height: 60%;
+                                left: 115px;
+                                width: 100px;
+                                top: 25%;
+                                pointer-events: none;
+                                opacity: 0.5;
+                            }
+                        }
+                        
+                        label {
+                            color: #999;
+                            font-size: 18px;
+                            font-weight: normal;
+                            position: absolute;
+                            pointer-events: none;
+                            left: 115px;
+                            top: 10px;
+                            transition: 0.2s ease all;
+                            -moz-transition: 0.2s ease all;
+                            -webkit-transition: 0.2s ease all;
+                        }
+                        
+                        .input:focus ~ label, .input:valid ~ label {
+                            top: -20px;
+                            font-size: 14px;
+                            color: #ffffff;
+                        }
+                        
+                        .bar {
+                            position: relative;
+                            display: block;
+                            width: 200px;
+
+                            &::before, &:active {
+                                content: '';
+                                height: 2px;
+                                width: 0;
+                                bottom: 0px;
+                                position: absolute;
+                                background: #ffffff;
+                                transition: 0.2s ease all;
+                                -moz-transition: 0.2s ease all;
+                                -webkit-transition: 0.2s ease all;
+                            }
+
+                            &:before {
+                                left: 57%;
+                            }
+
+                            &:after {
+                                right: 50%;
+                            }
+                        }
+                        
+                        .input:focus ~ .bar:before, .input:focus ~ .bar:after {
+                            width: 50%;
+                        }
+                                                    
+                        .input:focus ~ .highlight {
+                            animation: inputHighlighter 0.3s ease;
+                        }
+                        
+                        @keyframes inputHighlighter {
+
+                            from {
+                                background: #ffffff;
+                            }
+                            
+                            to {
+                                width: 0;
+                                background: transparent;
+                            }
+                        }
+                    }
+                }
+                
+                .textarea-container {
+                    display: flex;
+                    justify-content: center;
+                
+                    textarea {
+                        background-color: transparent;
+                        margin-top: 70px;
+                        width: 100%;
+                        min-height: 200px;
+                        border-radius: 40px;
+                        resize: none;
+                        color: #ffffff;
+                        padding: 10px 20px 0 20px;
+                        max-width: 500px;
+                    }
+                }
+
+                .advertencias-container {
+                    position: relative;
+                    bottom: 550px;
+                    left: 600px;
+                    
+                    .advertencias {
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        background-color: #ffffff;                        
+                        width: 400px;
+                        padding: 10px 10px;
+                        text-align: center;
+                        min-height: 70px;
+                        border-radius: 20px;
+
+                        .text {
+                            margin: 0;
+                            font-size: 1.2rem;
+                            padding-top: 10px;
+                        }
+                    }
+                }            
+
+                button {
+                    margin-top: 80px;
+                    @extend %footer-button;
+            
+                    h6 {
+                        text-decoration: none;
+                        display: inline-block;
+                        text-align: center;
+                        width: 100%;
+                        font-size: 2em;
+                        margin: 0 auto;
+                        color: #ffffff;
+                        transition: transform .4s;
+
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    svg {
+                        margin-left: 10px;
+                    }
+                }
+            }           
+        }
+
+        .footer-redes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 90px;
+
+            svg {
+                color: #ffffff;
+                height: 30px;
+                width: 30px;
+                margin: 0 33px;
+                transition: transform .5s;
+
+                &:hover {
+                    transform: scale(1.30);
+                }
+            }
+        }
+
+        .container-span {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+    
+            h5 {
+                text-align: center;
+                color: #ffffff;
+                font-size: 1em;
+            }
+        }
+    }
+
+}
+
+// Fin footer desktop
+
+// Tablet design
+
+@media only screen and (max-width: 1405px) {
+
+    .main-footer {
+    
+        .main-footer__div {
+    
+            #Contacto {
+            
+                section {
+    
+                    h2 {
+                        font-size: 5em;
+                        margin: 0 16px;
+                    }
+
+                    #formulario {
+    
+                        form {
+    
+                            .group {
+
+                                .highlight {
+                                    left: 55px;
+                                }
+                            }
+                            
+                            label {
+                                left: 55px;
+                            }
+                            
+                            .bar {   
+                                &:before {
+                                    left: 28%;
+                                }
+                            }
+                        }
+                    }
+                       
+                    button {
+                        padding: 1em 2.4em;
+                
+                        h6 {
+                            font-size: 1.5em;
+                        }
+                    }
+
+                    .advertencias-container {
+                        position: relative;
+                        bottom: 570px;
+                        left: 400px;
+                    }       
+                }           
+            }
+    
+            .footer-redes {
+                row-gap: 40px;
+
+                svg {
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+    
+            .container-span {
+                row-gap: 40px;
+
+                h5{
+                    font-size: 1em;
+                    padding-top: 60px;
+                    margin: 0 15px;
+                }
+            }
+        }
+    }
+}
+
+// Fin tablet design
+
+// Mobile L Design
+
+@media only screen and (max-width: 740px) {
+
+    .main-footer {
+    
+        .main-footer__div {
+    
+            #Contacto {
+            
+                section {
+    
+                    h2 {
+                        font-size: 4em;
+                    }
+
+                    #formulario {
+    
+                        form {
+    
+                            .group {
+                                left: 0px;
+                            }
+                        }
+                    }
+                       
+                    button {
+                        padding: 1em 2.1em;
+                
+                        h6 {
+                            font-size: 1.5em;
+    
+                            &:hover {
+                                transform: none;
+                            }
+                        }
+                    }
+
+                    .advertencias-container {
+                        position: static;
+                        margin: 70px 0 0 0;
+                        bottom: 0;
+                        left: 0;
+
+                        .advertencias {
+                            position: inherit;
+                        }
+                    }        
+                }           
+            }
+
+            .footer-redes {
+                padding: 90px 10px;
+            }
+        }
+    }
+}
+
+// Fin L Mobile design
+
+// Mobile S design
+
+@media only screen and (max-width: 500px) {
+
+    .main-footer {
+    
+        .main-footer__div {
+    
+            #Contacto {
+            
+                section {
+    
+                    h2 {
+                        font-size: 2em;
+                    }
+
+                    #formulario {                            
+
+                        form {
+    
+                            .group {
+                                left: 0;
+
+                                .highlight {
+                                    left: 35px;
+                                }
+                            }
+
+                            .input {
+                                width: 200px; 
+                            }
+
+                            label {
+                                font-size: 16px;
+                                left: 35px;
+                            }
+
+                            .bar {
+                                &:before {
+                                    left: 20%;
+                                }
+                            }
+                        }
+                    }
+                       
+                    .textarea-container {
+                    
+                        textarea {
+                            min-width: 300px;
+                        }
+                    }
+
+                    .advertencias-container {
+                        position: static;
+                        margin: 70px 0 0 0;
+                        bottom: 0;
+                        left: 0;
+
+                        .advertencias {
+                            position: inherit;
+                            width: 250px;
+                            margin: 0 auto;
+                        }
+                    }        
+
+                    button {
+                        padding: 1.6em 2.2em;
+                        margin-left: 20px;
+                        margin-right: 20px;
+                
+                        h6 {
+                            font-size: 1.2em;
+
+                            svg {
+                                width: 15px;
+                                height: 15px;
+                            }
+    
+                            &:hover {
+                                transform: none;
+                            }
+                        }
+                    }
+                }           
+            }
+        }
+    }
+}
+
+
+// Fin Mobile S design

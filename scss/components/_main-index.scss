@@ -1,0 +1,1829 @@
+// Desktop design
+
+html::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(0, 0, 0);
+} 
+
+html::-webkit-scrollbar-thumb {
+    background-color: nth($list: $colores-main-index, $n:3 );
+    height: 40px;
+    border-radius: 5px;
+}
+
+//disabled para ocultar todo el carrito
+.disabled {
+    display: none !important;
+}
+
+.block-scroll {
+    overflow: hidden !important;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.body-index {
+
+    .loader-centrado {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #111111;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: $z-index-header + 2;
+
+        @extend %loader;
+    }
+
+    .main-home {
+        padding-top: $altura_header_desktop;
+
+        .main-home__div {
+            // Cards sticky
+
+            .cards-scroll-y {
+                margin: 0 auto;
+                max-width: 1000px;
+
+                #cards {
+                    list-style: none;
+                    padding-left: 0;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat($cards, $cardHeight);
+                    gap: $CardMargin;
+                    padding-bottom: calc($cards * $cardTopPadding);
+                    margin-bottom: $CardMargin;
+
+                    #card1 {
+                        --index: 1;
+                    }
+
+                    #card2 {
+                        --index: 2;
+                    }
+
+                    #card3 {
+                        --index: 3;
+                    }
+
+                    #card4 {
+                        --index: 4;
+                    }
+
+                    .card, #card1 {
+                        top: $altura_header + 80px;
+
+                    }
+
+                    .card, #card2 {
+                        top: $altura_header + 100px;
+                    }
+
+                    .card, #card3 {
+                        top: $altura_header + 120px;
+                    }
+
+                    .card {
+                        position: sticky;
+                        border-radius: 50px;
+                        border: none;
+                    }
+
+                    #card1 .card-body {
+                        background: rgb(131, 87, 235);
+                    }
+
+                    #card2 .card-body {
+                        background: rgb(83, 37, 207);
+                    }
+                    
+                    #card3 .card-body {
+                        background: rgb(8, 48, 121);
+                    }
+                    
+                    #card4 .card-body {
+                        background: rgb(9, 3, 94);
+                    }
+
+                    .card {
+
+                        .card-body {
+                            display: grid;
+                            grid-template-columns: 60% 40%;
+                            box-sizing: border-box;
+                            padding: 30px;
+                            border-radius: 50px;
+                            box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+                            height: $cardHeight;
+                            transition: all 0.5s;
+
+                            section {
+                                width: 100%;
+                                height: 100%;
+
+                                h3 {
+                                    font-size: 3.5em;
+                                    margin: 60px $margin-left-section;
+                                    color: #ffffff;
+                                    width: 100%;
+                                }
+
+                                .contenido-p {
+                                    font-size: 1.2em;
+                                    letter-spacing: 2px;
+                                    line-height: 45px;
+                                    color: #ffffff;
+                                    margin-left: $margin-left-section;
+                                }
+
+                                .container-check {
+
+                                    span {
+                                        display: block;
+                                        color: #ffffff;
+                                        margin: 40px 0 40px 110px;
+                                    }
+        
+                                    svg {
+                                        color: #ffffff;
+                                        width: 40px;
+                                        position: absolute;
+                                        margin-left: $margin-left-section;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .last-card {
+
+                        .card-body {
+
+                            section {
+
+                                h3 {
+                                    font-size: 3em;
+                                    margin: 40px $margin-left-section;
+                                }
+                            }
+                        }
+                    }
+
+                    .card-body-img {
+                        width: 100%;
+                        margin: auto 0;
+                    }
+
+                }
+            }
+
+            // Fin cards sticky
+
+            #servicios-section {
+
+                #cards-slider-container {
+                    background: rgb(22, 22, 22);
+                    width: 97%;
+                    color: #ffffff;
+                    margin: 0 auto;
+                    padding: 0;
+                    border-radius: 50px;
+
+                    // Slider infinito
+
+                    .slider-h2 {
+                        @extend %texto-subtitulado;
+                    }
+
+                    .slider {
+                        @extend %slider-infinito;
+                        @extend %bloquear-seleccionar;
+                    }
+
+                    // Fin slider infinito
+
+                    // Servicios
+
+                    // Cards servicios
+
+                    //TITULO
+
+                    .loader-h2 {
+                        position: relative;
+                        overflow: hidden;
+                        border-right: 3px solid;
+                        width: 0px;
+                        animation: typewriter 3.4s steps(9)  infinite alternate , blink 0.5s steps(9) infinite;
+                        margin: 0 auto;
+
+                        h2 {
+                            font-size: 90px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            background: linear-gradient(to right,#ececec, #9b9a9a);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+                          
+
+                        @keyframes typewriter {
+                            0% {
+                              width: 0px;
+                            }
+                          
+                            100% {
+                              width: 520px;
+                            }
+                        }
+                          
+                        @keyframes blink {
+                            0% {
+                             border-right-color: rgba(255,255,255,.75);
+                            }
+                          
+                            100% {
+                              border-right-color: transparent;
+                            }
+                        }
+                    }
+                      
+                    //FIN TITULO
+
+                    //CARDS DESKTOP
+                
+                    #services-container {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        margin: 0;
+                        flex-wrap: wrap;
+                        z-index: 1;
+                        padding: 100px 0;
+
+                        .services-container__div {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            flex-direction: column;
+                            position: relative;
+                            width: 500px;
+                            height: 600px;
+                            margin: 30px 50px;
+                            border-radius: 15px;
+                            background: #00000093;
+                            overflow: hidden;
+                            border-top: 1px solid rgb(0, 0, 0);
+                            border-left: 1px solid rgb(0, 0, 0);
+
+                            .services-container__imgcontainer {
+
+                                img {
+                                    width: 100%;
+                                    object-fit: cover;
+                                }
+
+                                h4 {
+                                    display: flex;
+                                    justify-content: center;
+                                    height: 200px;
+                                    letter-spacing: 2px;
+                                    align-items: center;
+                                    font-size: 3em;
+                                    color: #ffffff;
+                                    text-transform: uppercase;
+                                    margin: auto;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+
+                    // FIN CARDS DESKTOP
+
+                    // Fin Servicios
+                }
+                
+            }
+
+            //CARRITO VENTANA EMERGENTE 
+     
+            #carrito-ventana {
+                position: fixed;
+                top: 0;
+                right: 0;
+                right: -100%;
+                width: $carritoemergente;
+                background-color: white;
+                color: #000;
+                z-index: $z-index-header + 4;
+                transition: .3s;
+                min-height: 100vh;
+                transition: .5s;
+                
+                //header    
+
+                .header-carrito {
+                    padding-top: 12px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 10px 29px;
+
+                    h3 {
+                        font-size: 20px;
+                        position: relative;
+                        top: 3px;
+                        font-weight: 400;
+                    }
+
+                    #cerrar-menu {
+                        cursor: pointer;
+                        color: #000;
+                        width: 45px;
+                        height: 45px;
+                    }
+                }
+
+                hr {
+                    width: 93%;
+                    margin: 20px auto 0 auto;
+                    color: #000;
+                    opacity: 1;
+                }
+                //fin header
+
+                //texto que se muestra por defecto
+                .carrito-vacio {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 20px;
+                    font-size: 1.8rem;
+                    text-align: center;
+                    height: 70vh;
+
+                    span {
+                        margin-bottom: 10px;
+                        opacity: .6;
+                        color: rgb(201, 146, 27);
+                        font-size: 6rem;
+                    }
+                }
+
+                //boton de vaciar carrito
+                .carrito-acciones-izquierda {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 15px; 
+
+                    button {
+                        width: 50%;
+                        background-color: nth($list: $colores-main-index, $n:2 );
+                        color: nth($list: $colores-main-index, $n:1 );
+                        border: none;
+                        padding: 13px 20px;
+                        border-radius: 20px;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-bottom: 10px;
+                    }
+                }       
+
+                //body
+                .body-carrito {
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: scroll;
+                    height: calc(80vh - 110px);
+
+                    //item de carrito
+                    .item {
+                        position: relative;
+                        padding: 14px;
+                        border-radius: 20px;
+                        margin: 20px 10px;
+                        display: grid;
+                        grid-template-columns: 180px 1fr;
+                        gap: 10px;
+                        text-align: center;
+                        align-items: center;
+                        background-color: #c0bebe;
+                        
+                            
+                            
+                        .tachito {
+                            position: absolute;
+                            cursor: pointer;
+                            border: none;
+                            background-color: transparent;
+                            top: 7px;
+                            right: 10px;
+    
+                            .material-symbols-outlined {
+                                color: rgb(150, 10, 10);
+                            }
+                            
+                        }
+
+                        .img {
+                            
+                            img {
+                                width: 100%;
+                                max-height: 110px;
+                                object-fit: cover;
+                            }
+
+                            .python {
+                                object-fit: contain;
+                            }
+                        }
+                        
+                        .producto-info {
+                            
+                            h6 {
+                                font-size: 1.1rem;
+                                text-align: start;
+                                margin-bottom: 34px;
+                                font-weight: 600;
+                            }
+
+                            .cantidad-obtenida {
+                                width: 100%;
+                                text-align: start;
+                                position: relative;
+                                bottom: 15px;
+                                font-weight: 800;
+                            }
+
+                            .producto-footer {
+                                display: flex;
+                                justify-content: space-between;
+                                gap: 10px;
+                                position: relative;
+                                bottom: 0;
+
+                                .cantidad-seleccionar {
+
+                                    .menor, .mayor {
+                                        display: inline-block;
+                                        width: 25px;
+                                        height: 25px;
+                                        background: #000;
+                                        border: none;
+                                        color: rgb(255, 255, 255);
+                                        border-radius: 50%;
+                                        cursor: pointer;
+                                        margin: 0 5px;
+        
+                                        &:nth-child(2) {
+                                            background-color: transparent;
+                                            color: #000000;
+                                        }
+                                    }
+
+                                    .contador-de-items {
+                                        display: inline;
+                                    }
+                                }
+
+                                .precio-producto {
+                                    font-weight: 700;
+                                }
+                            }
+            
+                        }
+                    }
+                }
+                //fin body
+
+                //footer
+                .carrito-acciones {
+                    background-color: #ffffff;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    border-top: 1px solid rgb(0, 0, 0);
+                    padding: 20px 0;
+
+                    .carrito-acciones-secundario {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        border-bottom: 1px solid rgb(0, 0, 0);
+                        margin-bottom: 0;
+                        align-items: center;
+                        margin-bottom: 20px;
+                    }
+
+                    //muestra total de carrito
+                    .carrito-acciones-derecha {
+                        background-color: rgb(255, 255, 255);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin: 0 20px;
+                        
+                        .carrito-acciones-total {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+
+                            p {
+                                color: rgb(0, 0, 0);
+                                display: inline;
+                                font-weight: 600;
+                                font-size: 20px;
+                            }
+                        }
+                        
+                        //boton finalizar compra
+                        button {
+                            width: 100%;
+                            background-color: rgb(0, 0, 0);
+                            color: rgb(255, 255, 255);
+                            border: none;
+                            padding: 13px 0;
+                            font-size: 17px;
+                            cursor: pointer;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+                //fin footer
+
+                .alerta-gracias-compra {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-top: calc(50% - 70px);
+
+                    .bi-check-circle-fill {
+                        fill: rgb(0, 128, 0);
+                        width: 250px;
+                    }
+
+                    h4 {
+                        transform: translateX();
+                        margin-top: 20px;
+                        font-size: 2rem;
+                        text-align: center;
+                    }
+                    
+                    .carrito-comprado-volver {
+                        position: relative;
+                        margin-top: 150px;
+                        background-color: rgb(0, 0, 0);
+                        border: none;
+                        color: #ffffff;
+                        width: 90%;
+                        padding: 15px 0;
+                        font-size: 20px;
+                    }
+                }
+
+            }
+
+            
+            #carrito-ventana.active {
+                right: 0;
+                transition: .5s;
+            }
+
+            //FIN CARRITO VENTANA EMERGENTE
+            
+            // OLA DE SEPARACION
+
+            .custom-shape-divider-bottom-1711250926 {
+                margin-top: 150px;
+                margin-bottom: -10;
+                width: 100%;
+                z-index: 1;
+                overflow: hidden;
+                line-height: 0;
+                transform: rotate(180deg);
+                margin-bottom: 0;
+
+                svg {
+                    position: relative;
+                    display: block;
+                    width: calc(120% + 1.3px);
+                    height: 156px;
+                }
+
+                .shape-fill {
+                    fill: rgb(0,0,0);
+                }
+            }
+
+
+            // FIN OLA SEPARACION
+
+            #Productos-nebula {
+                background: rgb(0,0,0);
+                background: linear-gradient(183deg, rgba(0,0,0,1) 10%, rgba(55,51,60,1) 71%);
+                color: #000000;
+                margin: 0 auto;
+                padding: 0;
+                box-sizing: border-box;
+
+                .slider-h2 {
+                    @extend %texto-subtitulado;
+                    width: 90%;
+                    padding-bottom: 130px;
+    
+                    p {
+                        color: rgb(190, 190, 190);
+                        font-size: 20px;
+                    }
+    
+                    h2{
+                        text-align: start;
+                        font-size: 3.5rem;
+                        color: #ffffff;
+                    }
+    
+                    span {
+                        border-left: 2px solid rgb(255, 255, 255);
+                        border-top: 2px solid rgb(255, 255, 255);
+                        border-right: 2px solid rgb(255, 255, 255);
+                    }
+                }
+
+                //PLANES
+
+                .equipo-title {
+                    color: #fff;
+                    text-align: center;
+                    margin-bottom: 110px;
+                    font-size: 3em;
+                }
+
+                #Planes-nebula {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+
+
+                    .card-servicios {
+                        margin: 0 14px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: column;
+                        align-items: stretch;
+                        margin-bottom: 2rem;
+                        width: 400px;
+                        border-radius: .50rem;
+                        border: 2px inset rgb(255, 255, 255);
+                        background: #e8e8e8;
+                        box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+                        box-shadow: 0px 0px 12px #c5c5c5;
+                        transition: all .5s ease-in-out;
+                        padding: 2rem;
+
+                        .header {
+                            display: flex;
+                            flex-direction: column;
+                            text-align: center;
+
+                            .title {
+                                font-size: 2rem;
+                                line-height: 2rem;
+                                font-weight: 700;
+                                color: #000000;
+                                margin-bottom: 10px;
+                            }
+
+                            .desc {
+                                margin-top: 0.75rem;
+                                margin-bottom: 0.75rem;
+                                line-height: 1.625;
+                                font-size: .9rem;
+                                color: rgb(0, 0, 0);
+                            }
+                              
+                            .price {
+                                font-size: 3.75rem;
+                                line-height: 1;
+                                font-weight: 700;
+                                color: #000000;
+                                padding: 10px 0;
+                            }
+                        }
+
+                        .imagen-plan {
+                            display: none;
+                        }
+
+                        hr {
+                            border-top: 1.5px solid rgb(0, 0, 0);
+                            opacity: 1;
+                            width: 80%;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        .action {
+                            border: none;
+                            outline: none;
+                            display: inline-block;
+                            border-radius: 0.25rem;
+                            width: 75%;
+                            background-color: rgb(0, 0, 0);
+                            padding: .75rem 1.25rem;
+                            margin: 20px auto;
+                            text-align: center;
+                            font-weight: 600;
+                            letter-spacing: 0.05em;
+                            color: #ffffff;
+                            transition: transform .5s;
+                        }
+
+                        .mes {
+                            text-align: center;
+                            color: #555555;
+                            font-size: .9rem;
+                            font-weight: 500;
+                        }
+                        
+                        .lists {
+                            margin-top: 1rem;
+                            margin-bottom: 0;
+                            flex: 1 1 0%;
+                            color: rgb(0, 0, 0);
+
+                            .list {
+                                margin-bottom: 0.8rem;
+                                display: flex;
+                                margin-left: 0.5rem;
+                                text-align: center;
+
+                                svg {
+                                    height: 1.5rem;
+                                    width: 1.5rem;
+                                    flex-shrink: 0;
+                                    margin-right: 0.5rem;
+                                }
+
+                                .bi-check2 {
+                                    color: rgb(22, 190, 7);
+                                }
+
+                                .bi-x {
+                                    color: rgb(226, 31, 31);
+                                }
+                            }
+                        }
+                        
+
+                    }   
+
+                    .card-1 {   
+                        height: 680px;
+                    }
+
+                    .card-2 {
+                        height: 840px;
+                        background: #f16767;
+                        box-shadow: inset 20px 20px 60px #e64e4e, inset -20px -20px 60px #e94242;
+                        box-shadow: 0px 0px 12px #eb4848;
+                        border: 2px inset #f00f0f;
+
+                        .container-mas-vendido {
+                            position: relative;
+                            
+                            .mas-vendido {
+                                background-color: rgb(250, 181, 246);
+                                position: absolute;
+                                padding: 7px 60px;
+                                top: -55px;
+                                left: 30px;
+                                border-radius: 50px;
+                                
+                                p {
+                                    color: #d33b3b;
+                                    text-transform: uppercase;
+                                    font-size: 23px;
+                                    margin-bottom: 0;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+
+                        .header {
+                            margin-top: 20px;
+                        }
+
+                        .mes {
+                            color: #000000;
+                        }
+
+                        .action {
+                            background-color: rgb(250, 181, 246);
+                            color: #d33b3b;
+                            transition: transform .5s;
+                        }
+                    }
+
+                    .card-3 {
+                        height: 790px;
+
+                        .lists {
+
+                            .list {
+                                margin-bottom: 0.6rem;
+                            }
+                        }
+                    }
+                }
+    
+                // SLIDER BOXES
+
+                .container-scrollingboxes {
+                    padding-bottom: 100px;
+                        
+                    .scrolling-box {
+                        width: 100%;
+                        margin: auto;
+                        height: auto;
+                        overflow-x: hidden;
+            
+                        .scrolling-container {
+                            display: flex;
+                            animation: scroll 20s linear infinite linear;
+                            -webkit-animation: scroll 20s linear infinite;
+                            width: calc(600px * 12);
+                            align-items: center;
+                            margin: 60px auto;
+            
+                            .scrolling-card {
+                                height: 100%;
+                                width: 440px;
+                                margin: 0 40px;
+            
+                                p {
+                                    font-size: .4rem;
+                                    color: #ffffff;
+            
+                                    .numero {
+                                            display: block;
+                                            font-size: 7.5rem;
+                                            letter-spacing: 3px;
+                                            font-weight: 800;
+                                    }
+            
+                                    .palabra {
+                                            font-size: 2rem;
+                                            font-weight: 600;
+                                            text-align: center;
+                                    }
+                                }
+                            }
+                        }
+            
+                        @keyframes scroll {
+                            0% {
+                                -webkit-transform: translateX(0);
+                                transform: translateX(0);
+                            }
+                             100% {
+                                 -webkit-transform: translateX(calc(-600px * 6));
+                                transform: translateX(calc(-600px * 6));
+                            }
+                        }
+                    }
+                }
+
+                // FIN SLIDER BOXES
+                
+                // COURSES CARD
+
+                #Nebula-academy {
+                    background-image: url("../img/backgrounds/layered-steps-haikei.svg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-attachment: fixed;
+                    padding: 50px 0 ;
+
+                    .courses-nebula-academy__text {
+                        width: 100%;
+                        margin: 0 auto 50px;
+                        padding-top: 15px;
+
+                        h3 {
+                            color: #ffffff;
+                            font-size: 4.7rem;
+                            font-weight: 700;
+                            padding-left: $padding_left-text-courses;
+                            
+                            span {
+                                @extend %gradient-text;
+                                font-weight: 800;
+                                font-style: italic;
+                                -webkit-text-stroke: .3px rgb(255, 255, 255); 
+                            }
+                        }
+
+                        p {
+                            color: #ffffff;
+                            width: 69%;
+                            padding-top: 40px;
+                            letter-spacing: 1px;
+                            line-height: 50px;
+                            font-size: 1.2rem;
+                            padding-left: $padding_left-text-courses;
+                            text-align: justify;
+                        }
+
+                    }
+
+                    .courses-nebula-academy__container {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: center;
+
+                        .courses-nebula-academy__card {
+                            width: 500px;
+                            box-shadow: 1px 1px 10px rgb(0, 0, 0);
+                            background-color: rgb(255, 255, 255);
+                            margin: 50px 30px;
+                            border: 1px solid rgb(0, 0, 0);
+                            padding-bottom: 30px;
+                            
+                            .courses-nebula-academy__section{
+                                width: 500px;
+                                
+                                img {
+                                    width: 100%;
+                                    padding: 25px;
+                                    height: 350px;
+                                    object-fit: cover;
+                                }
+
+                                .python, .backend {
+                                    object-fit: contain;
+                                }
+
+                                h5 {
+                                    font-size: 1.5rem;
+                                    padding-left: 10px;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    font-weight: 800;
+                                }
+                            }
+
+                            .p-container {
+                               
+                                p {
+                                    color: #000;
+                                    text-align: justify;
+                                    font-size: 1.1rem;
+                                    width: 80%;
+                                    margin: 15px auto;
+                                    max-height: 130px;
+                                }
+                            }
+
+                            .precio { 
+                                
+                                p { 
+                                    margin: 40px auto;   
+                                    width: 50%;
+                                    text-align: center;
+                                    font-size: 2rem;
+                                    background-color: rgb(0, 0, 0);
+                                    border-radius: 30px;
+                                    color: #fff;
+                                }
+                            }
+
+                            .fancy {
+                                display: flex;
+                                margin-bottom: 10px;
+                                @extend %boton-cursos;
+                            }           
+                            
+                        }
+                    }
+                }
+                // FIN COURSES CARD
+            }
+        }
+    }
+}
+
+// laptop L design
+
+@media only screen and (max-width: 1405px) {
+
+    .body-index {
+
+        .main-home {
+
+            .main-home__div {
+
+                .cards-scroll-y {
+                    max-width: 800px;
+
+                    #cards {
+                        gap: 150px;
+                    }
+                        
+                }
+
+                // Fin cards sticky
+
+                #servicios-section {
+
+                    #cards-slider-container {
+
+                        // Cards servicios
+
+                        #services-container {
+
+                            .services-container__div {
+                                width: 430px;
+                                height: 530px;
+                            }
+                        }
+
+                        // Fin cards servicios
+
+                        // Fin Servicios
+                    }
+
+                }
+
+                #carrito-ventana {
+                    width: 38vw;
+                }
+
+                #Productos-nebula {
+
+                    #Planes-nebula {   
+
+                        .card-servicios {
+                            margin: 40px 200px;
+                            width: 450px;
+                        }   
+    
+                        .card-2 {
+    
+                            .container-mas-vendido {
+                                
+                                .mas-vendido {
+                                    top: -55px;
+                                    left: 54px;
+                                }
+                            }
+                        }
+                    }
+        
+                    #Nebula-academy {
+
+                        .scrolling-buttons-container {
+                            
+                            #scrolling-button-left {
+                                left: -45%;
+                            }
+                        }
+
+                    }
+                    
+
+                    // FIN SLIDER BOXES
+                }
+            }
+        }
+    }
+}
+
+// Fin laptop l design
+
+// Laptop design
+
+@media only screen and (max-width: 1095px) {
+
+    .body-index {
+
+        .main-home {
+
+            .main-home__div {
+
+                .cards-scroll-y {
+                    margin: 0 auto;
+                    max-width: 670px;
+
+                    #cards {
+                        grid-template-rows: repeat($cards, 500px);
+                        gap: 200px;
+                        
+                        .card, #card1 {
+                            top: $altura_header + 0px;
+                        }
+
+                        .card, #card2 {
+                            top: $altura_header + 20px;
+                        }
+
+                        .card, #card3 {
+                            top: $altura_header + 40px;
+                        }
+
+                        .card {
+
+                            .card-body {
+                                display: flex;
+                                flex-direction: column;
+
+                                section {
+                                    width: 100%;
+        
+                                    h3 {
+                                        font-size: 2em;
+                                        margin: 20px $margin-left-section 40px;
+                                    }
+        
+                                    .contenido-p {
+                                        font-size: 1em;
+                                        letter-spacing: 1px;
+                                        line-height: 45px;
+                                        color: #ffffff;
+                                        margin-left: $margin-left-section;
+                                    }
+
+                                    .container-check {
+                                        width: 50%;
+                                    }
+                                }
+
+                                .card-body-img {
+                                    width: 200px;
+                                    position: absolute;
+                                    right: 70px;
+                                    bottom: 70px;
+                                }
+                            }
+                        }
+    
+                        .last-card {
+        
+                            .card-body {
+        
+                                section {
+        
+                                    h3 {
+                                        font-size: 3em;
+                                        margin: 40px $margin-left-section;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .card-body-img {
+                        width: calc($width-section-inside - 20%);
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                        
+                }
+
+                // Fin cards sticky
+
+                #servicios-section {
+
+                    #cards-slider-container {
+
+                        #services-container {
+
+                            .services-container__div {
+                                width: 420px;
+                                height: 520px;
+
+                                .services-container__imgcontainer {
+
+                                    h4 {
+                                        position: relative;
+                                        top: -20px;
+                                        font-size: 2em;
+                                    }
+                                }
+                            }
+                        }
+
+                        // Fin cards servicios
+
+                        // Fin Servicios
+                    }
+
+                }
+
+                #carrito-ventana {
+                    width: 50vw;
+                }
+
+                #Productos-nebula {
+
+                    #Planes-nebula {
+
+                        .card-servicios {
+                            margin: 0 200px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            flex-direction: column;
+                            align-items: stretch;
+                            margin-bottom: 3rem;
+                            width: 500px;
+                        }
+
+                        .card-2 {
+  
+                            .container-mas-vendido {
+                                position: relative;
+                                
+                                .mas-vendido {
+                                    left: 15%;
+                                }
+                            }
+                        }
+                    }
+
+                    .container-scrollingboxes {
+                        padding-bottom: 200px;
+            
+                        // SLIDER BOXES
+            
+                        .scrolling-box {
+            
+                            .scrolling-container {
+                                animation: scroll 20s linear infinite linear;
+                                -webkit-animation: scroll 20s linear infinite;
+            
+                                .scrolling-card {
+                                    width: 440px;
+                                    margin: 0 20px;
+            
+                                    p {
+            
+                                        .numero {
+                                            font-size: 5.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // FIN SLIDER BOXES
+                    
+                    // COURSES CARD
+
+                    #Nebula-academy {
+
+                        .scrolling-buttons-container {
+                            display: none;
+                        }
+
+                        .courses-nebula-academy__container {
+                            flex-direction: column;
+                            margin-left: 0;
+                            overflow-x: hidden;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 80px;
+
+                            
+
+                            .courses-nebula-academy__card {
+                                width: 500px;
+                                padding-bottom: 30px;
+
+                                .courses-nebula-academy__section{
+                                    width: 100%;
+                                    
+                                    img {
+                                        width: 100%;
+                                        object-fit: cover;
+                                    }
+
+                                    h5 {
+                                        font-size: 1.5rem;
+                                        padding-left: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // FIN COURSES CARD
+                }
+            }
+        }
+    }
+}
+
+// Fin laptop design 
+
+// Mobile L Design
+
+@media only screen and (max-width: 815px) {
+
+    .body-index {
+
+        .main-home {
+
+            .main-home__div {
+
+                .cards-scroll-y {
+                    max-width: 500px;
+
+                    #cards {
+
+                        .card, #card1 {
+                            top: 0;
+    
+                        }
+    
+                        .card, #card2 {
+                            top: 0;
+                        }
+    
+                        .card, #card3 {
+                            top: 0;
+                        }
+
+                        .card, #card4 {
+                            top: 0;
+                        }
+
+                        .card {
+                            position: relative;
+
+                            .card-body {
+        
+                                section {
+                                    width: 100%;
+    
+                                    .container-check {
+                                        width: 100%;
+                                    }
+                                }
+
+                                .card-body-img {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .card-body-img {
+                        width: calc($width-section-inside - 20%);
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                        
+                }
+
+                // Fin cards sticky
+
+                #carrito-ventana {
+                    width: 60vw;
+                }
+
+                #Productos-nebula {
+
+                    .container-scrollingboxes {
+                        padding-bottom: 100px;
+            
+                        // SLIDER BOXES
+            
+                        .scrolling-box {
+            
+                            .scrolling-container {
+                                animation: scroll 20s linear infinite linear;
+                                -webkit-animation: scroll 20s linear infinite;
+            
+                                .scrolling-card {
+                                    height: 100%;
+                                    width: 320px;
+                                    margin: 0 40px;
+            
+                                    p {
+            
+                                        .numero {
+                                            font-size: 3.2rem;
+                                        }
+            
+                                        .palabra {
+                                            font-size: 1.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // FIN SLIDER BOXES
+
+                    #Planes-nebula {
+    
+                        .card-servicios {
+                            margin: 3rem 20px;
+                            width: 400px;
+                        }   
+
+                        .card-2 {
+
+                            .container-mas-vendido {
+
+                                .mas-vendido {
+                                    left: 10%;
+                                }
+                            }
+                        }
+                    }
+                    
+                    // COURSES CARD
+
+                    #Nebula-academy {
+
+                        .courses-nebula-academy__text {
+
+                            h3 {
+                                width: 100%;
+                            }
+                            
+                            p {
+                                width: 90%;
+                                text-align: center;
+                            }
+                        }
+
+                        .courses-nebula-academy__container {
+                            flex-direction: column;
+                            margin-left: 0;
+                            gap: 70px;
+
+                            &::-webkit-scrollbar {
+                                display: none;
+                            } 
+                            
+                            &::-webkit-scrollbar-thumb {
+                                display: none;
+                            }
+                            
+
+                            .courses-nebula-academy__card {
+                                margin: 0 auto;
+                                width: 440px;
+
+                                .courses-nebula-academy__section{
+                                    width: 100%;
+                                    
+                                    img {
+                                        width: 100%;
+                                        padding: 25px;
+                                    }
+
+                                    h5 {
+                                        font-size: 1.5rem;
+                                        padding-left: 10px;
+                                    }
+
+                                    p {
+                                        padding: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // FIN COURSES CARD
+                }
+            }
+        }
+    }
+}
+
+// Fin L Mobile design
+
+@media only screen and (max-width: 700px) {
+                        
+    .body-index {
+
+        .main-home {
+
+            .main-home__div {
+
+                #carrito-ventana {
+                    width: 100vw;
+                }
+            }
+        }
+    }
+}
+
+// Mobile S design
+
+@media only screen and (max-width: 550px) {
+
+    .body-index {
+
+        .main-home {
+
+            .main-home__div {
+
+                .cards-scroll-y {
+                    margin: 0 auto;
+                    max-width: 340px;
+                    
+                    #cards {
+                        margin-bottom: 27vh;
+
+                        .card {
+    
+                            .card-body {
+                                display: flex;
+                                flex-direction: column;
+
+                                section {
+            
+                                    h3 {
+                                        font-size: 2em;
+                                        margin: 40px 0 20px 0;
+                                        text-align: center;
+                                    }
+
+                                    .contenido-p {
+                                        font-size: 1em;
+                                        margin: 0 0 20px 0;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #servicios-section {
+
+                    #cards-slider-container {
+
+                        // Cards servicios
+
+                        #services-container {
+
+                            .services-container__div { 
+                                height: 430px;
+
+                                .services-container__imgcontainer {
+                                    
+                                    h4 {
+                                        font-size: 1.4em;
+                                    }
+                                }
+                            }
+                            
+                        }
+
+                        // Fin cards servicios
+
+                        // Fin Servicios
+                    }
+
+                }
+
+                #carrito-ventana {
+                    
+                    .carrito-acciones-izquierda {
+
+                        button {
+                            width: 80%;
+                        }
+                    }
+
+                    .body-carrito {
+
+                        .item {
+                            display: flex;
+                            flex-direction: column;
+
+                            .tachito {
+                                top: 66px;
+                                right: 10px;
+                            }
+                            
+                            .producto-info {
+                                width: 100%;
+                            }
+                        }
+
+                    }
+                }
+
+                .loader-h2 {
+
+                    h2 {
+                        font-size: 50px !important;
+                    }
+                      
+
+                    @keyframes typewriter {
+                        0% {
+                          width: 0px;
+                        }
+                      
+                        100% {
+                          width: 290px;
+                        }
+                    }
+                }
+
+                #Productos-nebula {
+
+                    .slider-h2 {
+            
+                        h2{
+                            text-align: start;
+                            font-size: 2.5rem;
+                        }
+        
+                        span {
+                            border-left: 2px solid rgb(255, 255, 255);
+                            border-top: 2px solid rgb(255, 255, 255);
+                            border-right: 2px solid rgb(255, 255, 255);
+                        }
+                    }
+
+                    .container-scrollingboxes {
+                        
+                        // SLIDER BOXES
+            
+                        .scrolling-box {
+            
+                            .scrolling-container {
+                                animation: scroll 20s linear infinite linear;
+                                -webkit-animation: scroll 20s linear infinite;
+
+                                .scrolling-card {
+                                    width: 240px;
+            
+                                    p {
+            
+                                        .numero {
+                                            font-size: 3.5rem;
+                                        }
+            
+                                        .palabra {
+                                            font-size: 1.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // FIN SLIDER BOXES
+                    
+                    #Planes-nebula {
+    
+                        .card-servicios {
+                            margin: 3rem 20px;
+                            width: 400px;
+
+                            .lists {
+                                padding-left: 0;
+    
+                                .list {
+                                    margin-left: 0;
+                                }
+                            }
+                        }   
+                        
+                        .card-1 {
+                            height: 750px;
+                        }
+
+                        .card-2 {
+                            height: 1020px;
+
+                            .container-mas-vendido {
+
+                                .mas-vendido {
+                                    left: 22%; 
+                                    padding: 10px 40px;
+    
+                                    p {
+                                        font-size: 16px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+
+                        .card-3 {
+                            height: 1000px;
+                        }
+                    }
+
+                    // COURSES CARD
+
+                    #Nebula-academy {
+
+                        .courses-nebula-academy__text {
+
+                            h3 {
+                                font-size: 3em;
+                                text-align: center;
+                            }
+                        }
+
+                        .courses-nebula-academy__container {
+                            
+                            .courses-nebula-academy__card {
+                                margin: 0 auto;
+                                width: 300px;
+
+                                .courses-nebula-academy__section{
+                                    width: 100%;
+                                    
+                                    img {
+                                        object-fit: contain;
+                                    }
+
+                                    h5 {
+                                        font-size: 1.3rem;
+                                        padding-left: 10px;
+                                    }
+
+                                    p {
+                                        padding: 20px;
+                                    }
+                                }
+
+                                .precio {
+                                    padding: 30px 0;
+                                    position: relative;
+                                    top: 55px;
+                                    display: inline-block;
+                                    width: 100%;
+
+                                    p {
+                                        font-size: 1.5rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // FIN COURSES CARD
+                }
+            }
+        }
+    }
+}
+
+// Fin Mobile S design
+
+@media only screen and (max-width: 394px) {
+
+    .body-index {
+
+        .main-home {
+
+            .main-home__div {
+
+                .card-2 {
+
+                    .container-mas-vendido {
+
+                        .mas-vendido {
+                            left: 10% !important; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
