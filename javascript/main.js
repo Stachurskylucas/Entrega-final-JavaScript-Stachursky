@@ -25,9 +25,7 @@
 
     // Función para ocultar el icono de carrito cuando se abre el header responsive
     headerResponsive.addEventListener("click", () => {
-
         abrirCarritoBtn.classList.add("disabled");
-        
     });
 
     // Funcion para desocultar el icono de carrito cuando se cierra el header responsive
