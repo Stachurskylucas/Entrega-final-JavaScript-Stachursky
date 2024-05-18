@@ -119,9 +119,7 @@
             mostrarHTML();
             actualizarNumerito();
             guardarStorage();
-            mostrarAlerta();
-
-            
+            mostrarAlerta();  
         };
 
     });
@@ -465,6 +463,7 @@
     //Pantalla de carga
 
     window.addEventListener("load", () => {
+        
         setTimeout(() => {
             
             document.getElementById("onload").classList.add("disabled");

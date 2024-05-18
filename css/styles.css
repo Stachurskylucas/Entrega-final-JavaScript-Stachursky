@@ -1633,7 +1633,8 @@ html::-webkit-scrollbar-thumb {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  margin-top: calc(50% - 70px);
+  overflow-y: auto;
+  margin-top: 40px;
 }
 .body-index .main-home .main-home__div #carrito-ventana .alerta-gracias-compra .bi-check-circle-fill {
   fill: rgb(0, 128, 0);
@@ -1646,8 +1647,8 @@ html::-webkit-scrollbar-thumb {
   text-align: center;
 }
 .body-index .main-home .main-home__div #carrito-ventana .alerta-gracias-compra .carrito-comprado-volver {
-  position: relative;
-  margin-top: 150px;
+  position: absolute;
+  bottom: 60px;
   background-color: rgb(0, 0, 0);
   border: none;
   color: #ffffff;

@@ -571,7 +571,8 @@ html::-webkit-scrollbar-thumb {
                     justify-content: space-between;
                     align-items: center;
                     flex-direction: column;
-                    margin-top: calc(50% - 70px);
+                    overflow-y: auto;
+                    margin-top: 40px;
 
                     .bi-check-circle-fill {
                         fill: rgb(0, 128, 0);
@@ -586,8 +587,8 @@ html::-webkit-scrollbar-thumb {
                     }
                     
                     .carrito-comprado-volver {
-                        position: relative;
-                        margin-top: 150px;
+                        position: absolute;
+                        bottom: 60px;
                         background-color: rgb(0, 0, 0);
                         border: none;
                         color: #ffffff;
