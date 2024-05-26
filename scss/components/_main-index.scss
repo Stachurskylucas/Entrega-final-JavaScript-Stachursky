@@ -24,6 +24,11 @@ html::-webkit-scrollbar-thumb {
     overflow: hidden;
 }
 
+.boton-activo {
+    background-color: rgb(142, 92, 235);
+    border-radius: 40px;
+}
+
 .body-index {
 
     .loader-centrado {
@@ -423,8 +428,6 @@ html::-webkit-scrollbar-thumb {
                         align-items: center;
                         background-color: #c0bebe;
                         
-                            
-                            
                         .tachito {
                             position: absolute;
                             cursor: pointer;
@@ -447,7 +450,7 @@ html::-webkit-scrollbar-thumb {
                                 object-fit: cover;
                             }
 
-                            .python {
+                            .python, .backend, .canva, .wordpress, .excel, .after-effects, .photoshop, .criptomonedas, .Blockchain, .react, .google-ads {
                                 object-fit: contain;
                             }
                         }
@@ -459,6 +462,7 @@ html::-webkit-scrollbar-thumb {
                                 text-align: start;
                                 margin-bottom: 34px;
                                 font-weight: 600;
+                                width: 88%;
                             }
 
                             .cantidad-obtenida {
@@ -955,6 +959,39 @@ html::-webkit-scrollbar-thumb {
 
                     }
 
+                    .courses-nebula-academy__filter {
+                        width: 87%;
+                        margin: 0 auto;
+
+                        .courses-nebula-academy__filter-ul {
+                            display: flex;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            flex-wrap: wrap;
+                        }
+
+                        ul {
+                            background-color: #313131;
+                            padding: 20px 16px;
+                            border-radius: 50px;
+
+                            li {
+
+                                button {
+                                    background-color: #1d1c1c00;
+                                    color: #ffffff;
+                                    padding: 15px 30px;
+                                    border: 2px solid rgb(142, 92, 235);
+                                    border-radius: 40px;
+        
+                                    svg {
+                                        margin-right: 10px;
+                                    }
+                                }
+                            }
+                        }   
+                    }
+
                     .courses-nebula-academy__container {
                         display: flex;
                         flex-wrap: wrap;
@@ -962,7 +999,7 @@ html::-webkit-scrollbar-thumb {
                         align-items: center;
 
                         .courses-nebula-academy__card {
-                            width: 500px;
+                            width: 460px;
                             box-shadow: 1px 1px 10px rgb(0, 0, 0);
                             background-color: rgb(255, 255, 255);
                             margin: 50px 30px;
@@ -970,7 +1007,7 @@ html::-webkit-scrollbar-thumb {
                             padding-bottom: 30px;
                             
                             .courses-nebula-academy__section{
-                                width: 500px;
+                                width: inherit;
                                 
                                 img {
                                     width: 100%;
@@ -979,7 +1016,7 @@ html::-webkit-scrollbar-thumb {
                                     object-fit: cover;
                                 }
 
-                                .python, .backend {
+                                .python, .backend, .canva, .wordpress, .excel, .after-effects, .photoshop, .criptomonedas, .Blockchain, .react, .google-ads {
                                     object-fit: contain;
                                 }
 
@@ -989,18 +1026,6 @@ html::-webkit-scrollbar-thumb {
                                     text-align: center;
                                     text-transform: uppercase;
                                     font-weight: 800;
-                                }
-                            }
-
-                            .p-container {
-                               
-                                p {
-                                    color: #000;
-                                    text-align: justify;
-                                    font-size: 1.1rem;
-                                    width: 80%;
-                                    margin: 15px auto;
-                                    max-height: 130px;
                                 }
                             }
 

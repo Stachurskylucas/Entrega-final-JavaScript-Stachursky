@@ -4,8 +4,6 @@
   ****************************************************************************
 */
 
-    //DECLARACION DE VARIABLES QUE TRAEN ELEMENTOS DEL DOM
-
 //==============================================================================//
 
     //Carrito menu
@@ -59,21 +57,67 @@
 //==============================================================================//
 
     //Inicializo la variable para el carrito
-    
     document.addEventListener("DOMContentLoaded", () => {
         
         productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
-        
+
         mostrarHTML();
         actualizarNumerito();
     });
 
-    //Local storage
+    let productos = [];
 
-    //setItem
+    //Funcion para obtener los datos del JSON productos
+    function obtenerDatos(url) {
+
+        fetch(url)
+
+        .then(res => res.json())
+
+        // IMPORTANTE!, esta parte estamos asociando la variable que contiene todos los productos con el parametro data, esto para pasarlo como parametro a la funcion cargarCursos, entonces la funcion tiene como parametro al carrito entero para despues utilizarlo en el filtro con el .filter.
+        .then(data => {
+            productos = data;
+
+            cargarCursos(productos);
+        })
+
+        .catch(err => {
+            console.log(err);
+        });
+    };
+
+    //Llamo a la funcion obtener datos con la direccion del json que a su vez esa funcion llama la funcion que carga los cursos.
+    obtenerDatos("../productos.json");
+    
+    //Local storage - setItem
     const guardarStorage = () => {
         localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-    }    
+    };
+
+//==============================================================================//
+
+    // Filtrar tipos de cursos
+    const botonesFiltrar = document.querySelectorAll(".boton-filtrar");
+    const contenedorFiltros = document.querySelector("#contenedor-filtros");
+    
+    //Por cada boton ejecutar el evento:
+    botonesFiltrar.forEach(boton => {
+        
+        boton.addEventListener("click", (e) => { 
+
+            botonesFiltrar.forEach(boton => {
+                boton.classList.remove("boton-activo")
+            });
+
+            e.currentTarget.classList.add("boton-activo");
+
+            //En el filter estamos entrando a la categoria de cada uno y si coincide con el id del elemento clickado del li, se muestran los elementos con el mismo tipo y id, tambien se va a mostrar el que tenga la clase todos, que representa al boton all.
+            const filtrarSeccionElegida = productos.filter(producto => producto.categoria.tipo === e.currentTarget.id || e.currentTarget.id === "todos");
+
+            //Se llama a la funcion con el parametro filtrarSeccionElegida para que pinte por pantalla el filtro de arriba.
+            cargarCursos(filtrarSeccionElegida);
+        })
+    });
 
 //==============================================================================//
 
@@ -94,25 +138,24 @@
             }
 
             const verificarSiExisteElElemento = productosEnCarrito.some(producto => producto.id === infoProducto.id);
-
+            
             if (verificarSiExisteElElemento) {
                 const elemento = productosEnCarrito.map(producto => {
                     if (producto.id === infoProducto.id) {
-
+                        
                         producto.cantidad++;
                         return producto;
-
+                        
                     } 
                     else {
                         return producto;
                     }
                 });
-
+                
                 productosEnCarrito = [...elemento];
             } 
-
+            
             else {
-                    
                 productosEnCarrito = [...productosEnCarrito, infoProducto];
             }
 
@@ -121,7 +164,6 @@
             guardarStorage();
             mostrarAlerta();  
         };
-
     });
 
     //Funcion para planes agregar al carrito
@@ -149,18 +191,17 @@
                     if (plan.id === infoProducto.id) {
                         plan.cantidad++;
                         return plan;
-                
+                        
                     }
                     else {
                         return plan;
                     }    
-
+                    
                 });
                 productosEnCarrito = [...elemento];
-
+                
             }
             else {
-
                 productosEnCarrito = [...productosEnCarrito, infoProducto];
             }
             
@@ -234,7 +275,7 @@
                 </button>
                     
                 <div class="img">
-                    <img class="${producto.id}" src="${producto.imagen}" alt="${producto.nombre}">
+                    <img loading="lazy" class="${producto.id}" src="${producto.imagen}" alt="${producto.nombre}">
                 </div>
                     
                 <div class="producto-info">
@@ -289,7 +330,7 @@
         actualizarNumerito();
     }
     
-    //Declaracion de funcion vaciar carrito
+    //LLamado de funcion vaciar carrito
     carritoVaciar.addEventListener("click", vaciarCarrito);
 
     //------------------------------------------------------------------//

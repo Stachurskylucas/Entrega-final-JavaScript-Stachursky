@@ -1235,6 +1235,11 @@ html::-webkit-scrollbar-thumb {
   overflow: hidden;
 }
 
+.boton-activo {
+  background-color: rgb(142, 92, 235);
+  border-radius: 40px;
+}
+
 .body-index .loader-centrado {
   height: 100vh;
   width: 100%;
@@ -1538,7 +1543,7 @@ html::-webkit-scrollbar-thumb {
   max-height: 110px;
   object-fit: cover;
 }
-.body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .python {
+.body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .python, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .backend, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .canva, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .wordpress, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .excel, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .after-effects, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .photoshop, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .criptomonedas, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .Blockchain, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .react, .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .img .google-ads {
   object-fit: contain;
 }
 .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .producto-info h6 {
@@ -1546,6 +1551,7 @@ html::-webkit-scrollbar-thumb {
   text-align: start;
   margin-bottom: 34px;
   font-weight: 600;
+  width: 88%;
 }
 .body-index .main-home .main-home__div #carrito-ventana .body-carrito .item .producto-info .cantidad-obtenida {
   width: 100%;
@@ -1940,6 +1946,31 @@ html::-webkit-scrollbar-thumb {
   padding-left: 10%;
   text-align: justify;
 }
+.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter {
+  width: 87%;
+  margin: 0 auto;
+}
+.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter .courses-nebula-academy__filter-ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter ul {
+  background-color: #313131;
+  padding: 20px 16px;
+  border-radius: 50px;
+}
+.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter ul li button {
+  background-color: rgba(29, 28, 28, 0);
+  color: #ffffff;
+  padding: 15px 30px;
+  border: 2px solid rgb(142, 92, 235);
+  border-radius: 40px;
+}
+.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter ul li button svg {
+  margin-right: 10px;
+}
 .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container {
   display: flex;
   flex-wrap: wrap;
@@ -1947,7 +1978,7 @@ html::-webkit-scrollbar-thumb {
   align-items: center;
 }
 .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card {
-  width: 500px;
+  width: 460px;
   box-shadow: 1px 1px 10px rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   margin: 50px 30px;
@@ -1955,7 +1986,7 @@ html::-webkit-scrollbar-thumb {
   padding-bottom: 30px;
 }
 .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section {
-  width: 500px;
+  width: inherit;
 }
 .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section img {
   width: 100%;
@@ -1963,7 +1994,7 @@ html::-webkit-scrollbar-thumb {
   height: 350px;
   object-fit: cover;
 }
-.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .python, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .backend {
+.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .python, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .backend, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .canva, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .wordpress, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .excel, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .after-effects, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .photoshop, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .criptomonedas, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .Blockchain, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .react, .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section .google-ads {
   object-fit: contain;
 }
 .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .courses-nebula-academy__section h5 {
@@ -1972,14 +2003,6 @@ html::-webkit-scrollbar-thumb {
   text-align: center;
   text-transform: uppercase;
   font-weight: 800;
-}
-.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .p-container p {
-  color: #000;
-  text-align: justify;
-  font-size: 1.1rem;
-  width: 80%;
-  margin: 15px auto;
-  max-height: 130px;
 }
 .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container .courses-nebula-academy__card .precio p {
   margin: 40px auto;

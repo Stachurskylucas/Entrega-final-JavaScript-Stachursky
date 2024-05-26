@@ -1,0 +1,191 @@
+[
+    {
+        "id": "javascript",
+        "categoria": {
+            "tipo": "programacion"
+        },
+        "nombre": "Curso de JavaScript",
+        "imagen": "./img/cards/javascript-logo-escudo.png",
+        "precio": 140
+    },
+    {
+        "id": "contabilidad",
+        "categoria": {
+            "tipo": "finanzas"
+        },
+        "nombre": "Curso de Contabilidad",
+        "imagen": "./img/cards/contabilidad.png",
+        "precio": 30
+    },
+    {
+        "id": "inversiones",
+        "categoria": {
+            "tipo": "finanzas"
+        },
+        "nombre": "Curso de Inversiones",
+        "imagen": "./img/cards/inversiones.png",
+        "precio": 20
+    },
+    {
+        "id": "python",
+        "categoria": {
+            "tipo": "programacion"
+        },
+        "nombre": "Curso de Python",
+        "imagen": "./img/cards/python-5.svg",
+        "precio": 140
+    },
+    {
+        "id": "desarrollo-web",
+        "categoria": {
+            "tipo": "programacion"
+        },
+        "nombre": "Curso de Desarollo web",
+        "imagen": "./img/cards/htmlycss.png",
+        "precio": 120
+    },
+    {
+        "id": "react",
+        "categoria": {
+            "tipo": "programacion"
+        },
+        "nombre": "Curso de React JS",
+        "imagen": "./img/cards/react-2.svg",
+        "precio": 120
+    },
+    {
+        "id": "ciberseguridad",
+        "categoria": {
+            "tipo": "programacion"
+        },
+        "nombre": "Curso de Ciberseguridad",
+        "imagen": "./img/cards/cibersecurity.png",
+        "precio": 120
+    },
+    {
+        "id": "backend",
+        "categoria": {
+            "tipo": "programacion"
+        },
+        "nombre": "Curso de Desarrollo Back-end",
+        "imagen": "./img/cards/logos-backend.png",
+        "precio": 160
+    },
+    {
+        "id": "marketing",
+        "categoria": {
+            "tipo": "marketing"
+        },
+        "nombre": "Curso de Marketing Digital",
+        "imagen": "./img/cards/marketing.jpg",
+        "precio": 60
+    },
+    {
+        "id": "seo",
+        "categoria": {
+            "tipo": "marketing"
+        },
+        "nombre": "Curso de SEO",
+        "imagen": "./img/cards/seo.png",
+        "precio": 50
+    },
+    {
+        "id": "google-ads",
+        "categoria": {
+            "tipo": "marketing"
+        },
+        "nombre": "Curso de Google Ads",
+        "imagen": "./img/cards/google-ads-2.svg",
+        "precio": 45
+    },
+    {
+        "id": "community-manager",
+        "categoria": {
+            "tipo": "marketing"
+        },
+        "nombre": "Curso de Community Manager",
+        "imagen": "./img/cards/comunity.jpg",
+        "precio": 98
+    },
+    {
+        "id": "canva",
+        "categoria": {
+            "tipo": "habilidades"
+        },
+        "nombre": "Curso de Canva",
+        "imagen": "./img/cards/canva-1.svg",
+        "precio": 45
+    },
+    {
+        "id": "wordpress",
+        "categoria": {
+            "tipo": "habilidades"
+        },
+        "nombre": "Curso de WordPress",
+        "imagen": "./img/cards/wordpress-icon-1.svg",
+        "precio": 67
+    },
+    {
+        "id": "trading",
+        "categoria": {
+            "tipo": "finanzas"
+        },
+        "nombre": "Curso de Trading",
+        "imagen": "./img/cards/trading.jpg",
+        "precio": 90
+    },
+    {
+        "id": "excel",
+        "categoria": {
+            "tipo": "habilidades"
+        },
+        "nombre": "Curso de Excel",
+        "imagen": "./img/cards/excel-4.svg",
+        "precio": 45
+    },
+    {
+        "id": "oratoria",
+        "categoria": {
+            "tipo": "marketing"
+        },
+        "nombre": "Curso de Oratoria",
+        "imagen": "./img/cards/oratoria.jpg",
+        "precio": 22
+    },
+    {
+        "id": "Blockchain",
+        "categoria": {
+            "tipo": "finanzas"
+        },
+        "nombre": "Curso de Blockchain",
+        "imagen": "./img/cards/blockchain-1.svg",
+        "precio": 95
+    },
+    {
+        "id": "after-effects",
+        "categoria": {
+            "tipo": "habilidades"
+        },
+        "nombre": "Curso de After Effects",
+        "imagen": "./img/cards/after-effects-1.svg",
+        "precio": 75
+    },
+    {
+        "id": "criptomonedas",
+        "categoria": {
+            "tipo": "finanzas"
+        },
+        "nombre": "Curso de Cripto",
+        "imagen": "./img/cards/criptomonedas.jpg",
+        "precio": 120
+    },
+    {
+        "id": "photoshop",
+        "categoria": {
+            "tipo": "habilidades"
+        },
+        "nombre": "Curso de Photoshop",
+        "imagen": "./img/cards/adobe-photoshop-2.svg",
+        "precio": 45
+    }
+]

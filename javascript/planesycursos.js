@@ -4,53 +4,7 @@
 
 //===================================================================================//
 
-    //Creamos el array de objetos de los cursos
-    const cursos = [
-        {
-            id: "desarrollo-web",
-            nombre: "Curso de Desarollo web",
-            imagen: "./img/cards/htmlycss.png",
-            descripcion: "Calificado como el mejor curso de desarrollo web del 2023 por la Universidad de California, aprenderas a usar HTML, CSS, SASS, frameworks, GIT y más. El curso consta de unas 15 semanas de aprendizaje.",
-            precio: 120
-        },
-        {
-            id: "javascript",
-            nombre: "Curso de JavaScript",
-            imagen: "./img/cards/javascript-logo-escudo.png",
-            descripcion: "El curso de JavaScript de la Universidad de Stanford, destacado en 2023, consta de 20 semanas. Explora desde los fundamentos hasta aplicaciones avanzadas con Vue.js, Node.js y GIT.",
-            precio: 140
-        },
-        {
-            id: "ciberseguridad",
-            nombre: "Curso de Ciberseguridad",
-            imagen: "./img/cards/cibersecurity.png",
-            descripcion: "Reconocido como el mejor curso de ciberseguridad de la Universidad de Harvard en 2023, nuestro programa intensivo abarca 25 semanas. Explorarás seguridad de redes, análisis de vulnerabilidades y respuesta a incidentes.",
-            precio: 120
-        },
-        {
-            id: "ux-ui",
-            nombre: "Curso de Diseño UX-UI",
-            imagen: "./img/cards/ux-ui-logo.svg",
-            descripcion: "Nuestro curso de UX/UI ofrece una formación completa de 20 semanas. Aprenderás a diseñar experiencias de usuario atractivas y funcionales. Con proyectos desafiantes y prácticas actualizadas.",
-            precio: 100
-        },
-        {
-            id: "python",
-            nombre: "Curso de Python",
-            imagen: "./img/cards/python-5.svg",
-            descripcion: "El curso de Python, ofrece un programa completo de 12 semanas. Te sumergirás en el lenguaje de programación más versátil y demandado del momento. Estarás listo para dominar Python en cualquier entorno.",
-            precio: 140
-        },
-        {
-            id: "backend",
-            nombre: "Curso de Desarrollo Back-end",
-            imagen: "./img/cards/logos-backend.png",
-            descripcion: "Nuestro curso de desarrollo backend dura 16 semanas. Desde servidores hasta bases de datos, aprenderás a construir aplicaciones sólidas. Con proyectos prácticos, destacarás en el desarrollo backend.",
-            precio: 160
-        }
-    ];
-    
-     //Creamos el array de los planes
+    //Creamos el array de los planes
     const planes = [
     
         //PLan premium
@@ -124,23 +78,25 @@
     ];
 
 //===================================================================================//
+    
+    //Creamos una funcion para cargar los cursos y escribir el html dependiendo el filtro de cada curso, por eso el parametro.
+    function cargarCursos(cursos) {
+        let cardCursos = document.querySelector(".courses-nebula-academy__container");
 
-    //Creamos una funcion para cargar los cursos y planes y escribir el html desde JS
-    function cargarCursos() {
-
+        //Esto es importante para que cada vez que carguemos los cursos se limpie el html para que no se repitan los mismos.
+        cardCursos.innerHTML = "";
+    
         cursos.forEach(curso => {
-        const card = document.createElement("div");
-        card.classList.add("courses-nebula-academy__card");
-        
-            if (curso.nombre === "Curso de Python") {
-                card.innerHTML = `
+            
+            const card = document.createElement("div");
+            card.classList.add("courses-nebula-academy__card");
+            card.innerHTML = `
+
                 <section class="courses-nebula-academy__section">
-                    <img src="${curso.imagen}" alt="${curso.id}" class="${curso.id}">
+                    <img loading="lazy" class="${curso.id}" src="${curso.imagen}" alt="${curso.id}">
                     <h5>${curso.nombre}</h5>
                 </section>
-                <div class="p-container">
-                    <p>${curso.descripcion}</p>
-                </div>
+
                 <div class="precio">
                     <p>${curso.precio}$</p>
                 </div>
@@ -150,57 +106,14 @@
                     <span class="bottom-key-1"></span>
                     <span class="bottom-key-2"></span>
                 </button>
-                `;
-            } 
 
-            else if (curso.nombre === "Curso de Desarrollo Back-end") {
-                card.innerHTML = `
-                <section class="courses-nebula-academy__section backend">
-                    <img src="${curso.imagen}" alt="" class="${curso.id}">
-                    <h5>${curso.nombre}</h5>
-                </section>
-                <div class="p-container">
-                    <p>${curso.descripcion}</p>
-                </div>
-                <div class="precio">
-                    <p>${curso.precio}$</p>
-                </div>
-
-                <button type="button" class="fancy cursos-carrito" id="${curso.id}">Añadir al carrito
-                    <span class="top-key"></span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
-                </button>
-                `;
-            } 
-
-            else {
-                card.innerHTML = `
-                <section class="courses-nebula-academy__section">
-                    <img src="${curso.imagen}" alt="${curso.id}">
-                    <h5>${curso.nombre}</h5>
-                </section>
-                <div class="p-container">
-                    <p>${curso.descripcion}</p>
-                </div>
-                <div class="precio">
-                    <p>${curso.precio}$</p>
-                </div>
-
-                <button type="button" class="fancy cursos-carrito" id="${curso.id}">Añadir al carrito
-                    <span class="top-key"></span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
-                </button>
-                
-                `;
-            }
+            `;
 
             cardCursos.appendChild(card);
         });
+    };
 
-    }
-
+    //Creamos una funcion para cargar los planes y escribir el html desde JS
     function cargarPlanes() {
 
         planes.forEach(plan => {
@@ -463,8 +376,7 @@
         });
     };
 
-    //Llamamos las funciones para cargar los cursos y plaenes en el html
-    cargarCursos();
+    //Llamamos las funciones para cargar los planes en el html
     cargarPlanes();
 
 //===================================================================================//
