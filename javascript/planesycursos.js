@@ -1,7 +1,4 @@
 
-// EN ESTE DOCUMENTO SE VAN A CREAR LOS OBJETOS LITERALES DE LOS CURSOS Y PLANES Y SUS RESPECTIVAS FUNCIONES PARA MOSTRARLOS EN EL HTML PARA AHORRAR CODIGO EN EL OTRO DOCUMENTO.
-
-
 //===================================================================================//
 
     //Creamos el array de los planes
@@ -112,6 +109,30 @@
             cardCursos.appendChild(card);
         });
     };
+
+    let productos = [];
+
+    //Funcion para obtener los datos del JSON productos
+    function obtenerDatos(url) {
+
+        fetch(url)
+
+            .then(res => res.json())
+
+            // IMPORTANTE!, esta parte estamos asociando la variable que contiene todos los productos con el parametro data, esto para pasarlo como parametro a la funcion cargarCursos, entonces la funcion tiene como parametro al carrito entero para despues utilizarlo en el filtro con el .filter.
+            .then(data => {
+                productos = data.cursos;
+
+                cargarCursos(productos);
+            })
+
+            .catch(err => {
+                console.log(err);
+            });
+    };
+
+    //Llamo a la funcion obtener datos con la direccion del json que a su vez esa funcion llama la funcion que carga los cursos.
+    obtenerDatos('productos.json');
 
     //Creamos una funcion para cargar los planes y escribir el html desde JS
     function cargarPlanes() {

@@ -1089,15 +1089,6 @@ html {
     position: relative;
     right: 148px;
   }
-  .landing-page .landing-page__div .landing-page__section .landing-page__texto .landing-page__mobileimg {
-    margin: 60px auto;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-  }
-  .landing-page .landing-page__div .landing-page__section .landing-page__texto .landing-page__mobileimg img {
-    width: 500px;
-  }
   .landing-page .landing-page__div .landing-page__section .landing-page__texto p {
     margin: 0;
     text-align: center;
@@ -1111,9 +1102,6 @@ html {
   }
   .landing-page .landing-page__div .landing-page__section .landing-page__texto .landing-page__a:hover {
     transform: scale(1.11) translateX(0);
-  }
-  .landing-page .landing-page__div .img-container {
-    display: none;
   }
   .landing-page .landing-page__div .landing-page__descargas {
     margin: 0 !important;
@@ -1135,9 +1123,6 @@ html {
   }
   .landing-page .landing-page__div .landing-page__section .landing-page__texto h1 span strong {
     font-size: 3.7rem;
-  }
-  .landing-page .landing-page__div .landing-page__section .landing-page__texto .landing-page__mobileimg img {
-    width: 400px;
   }
   .landing-page .landing-page__div .landing-page__section .landing-page__texto p {
     margin: auto;
@@ -1181,9 +1166,6 @@ html {
   }
   .landing-page .landing-page__div .landing-page__section .landing-page__texto h1 span strong {
     font-size: 2.4rem;
-  }
-  .landing-page .landing-page__div .landing-page__section .landing-page__texto .landing-page__mobileimg img {
-    width: 250px;
   }
   .landing-page .landing-page__div .landing-page__section .landing-page__texto p {
     font-size: 1.7rem;
@@ -1955,20 +1937,18 @@ html::-webkit-scrollbar-thumb {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-}
-.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter ul {
   background-color: #313131;
   padding: 20px 16px;
   border-radius: 50px;
 }
-.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter ul li button {
+.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter .courses-nebula-academy__filter-ul li button {
   background-color: rgba(29, 28, 28, 0);
   color: #ffffff;
   padding: 15px 30px;
   border: 2px solid rgb(142, 92, 235);
   border-radius: 40px;
 }
-.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter ul li button svg {
+.body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter .courses-nebula-academy__filter-ul li button svg {
   margin-right: 10px;
 }
 .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__container {
@@ -2039,6 +2019,10 @@ html::-webkit-scrollbar-thumb {
   .body-index .main-home .main-home__div #Productos-nebula #Planes-nebula .card-2 .container-mas-vendido .mas-vendido {
     top: -55px;
     left: 54px;
+  }
+  .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .courses-nebula-academy__filter .courses-nebula-academy__filter-ul {
+    column-gap: 20px;
+    row-gap: 20px;
   }
   .body-index .main-home .main-home__div #Productos-nebula #Nebula-academy .scrolling-buttons-container #scrolling-button-left {
     left: -45%;

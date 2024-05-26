@@ -178,17 +178,6 @@
                         }
                     }
 
-                    .landing-page__mobileimg {
-                        margin: 60px auto;
-                        display: flex;
-                        justify-content: center;
-                        align-self: center;
-
-                        img {
-                            width: 500px;
-                        }
-                    }
-
                     p {
                         margin: 0;
                         text-align: center;
@@ -207,11 +196,6 @@
                         }
                     }
                 }
-            }
-
-
-            .img-container {
-                display: none;
             }
 
             .landing-page__descargas {
@@ -253,14 +237,6 @@
                             strong {
                                 font-size: 3.7rem;
                             }
-                        }
-                    }
-
-                    .landing-page__mobileimg {
-
-
-                        img {
-                            width: 400px;
                         }
                     }
 
@@ -337,13 +313,6 @@
                             strong {
                                 font-size: 2.4rem;
                             }
-                        }
-                    }
-
-                    .landing-page__mobileimg {
-
-                        img {
-                            width: 250px;
                         }
                     }
 

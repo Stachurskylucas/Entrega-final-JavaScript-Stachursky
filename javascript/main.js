@@ -64,30 +64,6 @@
         mostrarHTML();
         actualizarNumerito();
     });
-
-    let productos = [];
-
-    //Funcion para obtener los datos del JSON productos
-    function obtenerDatos(url) {
-
-        fetch(url)
-
-        .then(res => res.json())
-
-        // IMPORTANTE!, esta parte estamos asociando la variable que contiene todos los productos con el parametro data, esto para pasarlo como parametro a la funcion cargarCursos, entonces la funcion tiene como parametro al carrito entero para despues utilizarlo en el filtro con el .filter.
-        .then(data => {
-            productos = data;
-
-            cargarCursos(productos);
-        })
-
-        .catch(err => {
-            console.log(err);
-        });
-    };
-
-    //Llamo a la funcion obtener datos con la direccion del json que a su vez esa funcion llama la funcion que carga los cursos.
-    obtenerDatos("../productos.json");
     
     //Local storage - setItem
     const guardarStorage = () => {
