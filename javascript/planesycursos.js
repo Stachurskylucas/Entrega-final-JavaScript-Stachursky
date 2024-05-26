@@ -131,6 +131,7 @@
             });
     };
 
+
     //Llamo a la funcion obtener datos con la direccion del json que a su vez esa funcion llama la funcion que carga los cursos.
     obtenerDatos('productos.json');
 
